@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGS International School - Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-graduation-cap"></i>
+                <h2>BGS School</h2>
+            </div>
+            
+            <div class="quick-questions">
+                <h3>Quick Questions</h3>
+                <button onclick="askQuickQuestion('founder')"><i class="fas fa-user"></i> Founder</button>
+                <button onclick="askQuickQuestion('leadership')"><i class="fas fa-users"></i> Leadership</button>
+                <button onclick="askQuickQuestion('hours')"><i class="fas fa-clock"></i> School Hours</button>
+                <button onclick="askQuickQuestion('contact')"><i class="fas fa-phone"></i> Contact</button>
+                <button onclick="askQuickQuestion('admissions')"><i class="fas fa-file-signature"></i> Admissions</button>
+                <button onclick="askQuickQuestion('fees')"><i class="fas fa-dollar-sign"></i> Fees</button>
+                <button onclick="askQuickQuestion('uniform')"><i class="fas fa-tshirt"></i> Uniform</button>
+                <button onclick="askQuickQuestion('holidays')"><i class="fas fa-calendar"></i> Holidays</button>
+                <button onclick="askQuickQuestion('transport')"><i class="fas fa-bus"></i> Transport</button>
+                <button onclick="askQuickQuestion('curriculum')"><i class="fas fa-book"></i> Curriculum</button>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="status">
+                    <span class="status-dot"></span>
+                    <span id="api-status-text">Online</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Chat Area -->
+        <div class="chat-container">
+            <!-- Header -->
+            <div class="chat-header">
+                <div class="header-info">
+                    <i class="fas fa-robot"></i>
+                    <div>
+                        <h1>School Assistant</h1>
+                        <p>Ask me anything about BGS International School</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Messages -->
+            <div class="messages" id="messages">
+                <div class="message bot">
+                    <div class="avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="content">
+                        <div class="sender">School Assistant</div>
+                        <div class="text">
+                            👋 Hello! Welcome to <strong>BGS International School</strong> chatbot.<br><br>
+                            I can help you with information about our school. Try asking:
+                            <ul style="margin: 10px 0; padding-left: 20px;">
+                                <li>Who is the founder?</li>
+                                <li>How long has the school been running?</li>
+                                <li>What are the admission requirements?</li>
+                                <li>What is the fee structure?</li>
+                            </ul>
+                        </div>
+                        <div class="time" id="initial-time"></div>
+                    </div>
+                </div>
+                
+                <!-- Typing Indicator -->
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Suggestions -->
+            <div class="suggestions">
+                <span class="suggestion-tag" onclick="sendMessage('Who is the founder of BGS?')">Who is the founder?</span>
+                <span class="suggestion-tag" onclick="sendMessage('Who is the chairman?')">Who is the chairman?</span>
+                <span class="suggestion-tag" onclick="sendMessage('Who is the principal?')">Who is the principal?</span>
+                <span class="suggestion-tag" onclick="sendMessage('How many years has the school been running?')">Years running?</span>
+            </div>
+            
+            <!-- Input Area -->
+            <div class="input-area">
+                <button class="icon-btn" onclick="startVoiceInput()" id="voiceBtn" title="Voice Input">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <input 
+                    type="text" 
+                    id="userInput" 
+                    placeholder="Ask me anything about the school..."
+                    onkeypress="handleKeyPress(event)"
+                    autocomplete="off"
+                />
+                <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Set initial time
+        document.getElementById('initial-time').textContent = getCurrentTime();
+    </script>
+</body>
+</html>

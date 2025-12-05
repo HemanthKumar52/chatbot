@@ -1,0 +1,12 @@
+{
+  "name": "bgs-school-chatbot",
+  "version": "1.0.0",
+  "description": "BGS International School Chatbot with DeepSeek AI",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["chatbot", "school", "education"],
+  "author": "",
+  "license": "ISC"
+}
