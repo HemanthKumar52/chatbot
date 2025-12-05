@@ -297,6 +297,7 @@ function askQuickQuestion(type) {
 }
 
 // Send message function
+// Send message function
 async function sendMessage(customMessage = null) {
     const message = customMessage || userInput.value.trim();
     
@@ -326,8 +327,10 @@ async function sendMessage(customMessage = null) {
         
         let response = getResponse(message);
         
-        // Enhance with AI for complex queries if enabled
-        if (CONFIG.useAI && shouldUseAI(message)) {
+        // Use AI if enabled and either:
+        // 1. No local response was found (response is null)
+        // 2. The query triggers specific AI keywords (complex queries)
+        if (CONFIG.useAI && (!response || shouldUseAI(message))) {
             try {
                 const aiResponse = await getAIResponse(message);
                 if (aiResponse) {
@@ -336,6 +339,11 @@ async function sendMessage(customMessage = null) {
             } catch (error) {
                 console.error('AI request failed, using local response:', error);
             }
+        }
+        
+        // If still no response (AI failed or disabled, and no local match), use default fallback
+        if (!response) {
+            response = getDefaultResponse(message);
         }
         
         addMessage(response, 'bot', true);
@@ -576,7 +584,12 @@ function getResponse(message) {
         return formatAboutInfo();
     }
     
-    // Default response
+    // No response found
+    return null;
+}
+
+// Default response when no information is found
+function getDefaultResponse(message) {
     return `I understand you're asking about: <strong>"${message}"</strong><br><br>
     I can help you with information about ${SCHOOL_DATA.name}, ${SCHOOL_DATA.location}. Here are our key people:<br><br>
     <strong>👥 Leadership:</strong><br>
