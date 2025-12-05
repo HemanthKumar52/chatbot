@@ -1,7 +1,7 @@
 # Dependencies
 node_modules/
 
-# Environment variables
+# Environment variables - ONLY exclude .env, not other files
 .env
 .env.local
 .env.production
@@ -25,3 +25,8 @@ yarn-error.log*
 *.swp
 *.swo
 *~
+
+# DO NOT exclude these files:
+# !style.css
+# !script.js
+# !index.html
