@@ -1,8 +1,11 @@
 // School Database - All information stored here
 const SCHOOL_DATA = {
     // Basic Information
-    name: "BGS International School",
-    motto: "Learning Today, Leading Tomorrow",
+    name: "Bharathidasanar Group of Schools",
+    shortName: "BGS",
+    location: "Arakkonam",
+    motto: "A beacon of education and a symbol of hope",
+    tagline: "The first school founded in Arakkonam",
     established: "1980",
     yearsRunning: "44 years",
     founder: "Shri. P. Sekar",
@@ -10,6 +13,9 @@ const SCHOOL_DATA = {
     academicDirector: "Mr. John Lawrence",
     financeMediaDirector: "S. Padma",
     principal: "Mr. Venkatesan",
+    
+    // About Section
+    about: "Bharathidasanar Group of Schools, Arakkonam is a beacon of education and a symbol of hope in Arakkonam since 1980. As the first school founded in this vibrant town, we take pride in our rich legacy of nurturing young minds and guiding them towards a bright future. Established with a vision to provide quality education and holistic development, BGS has been a trusted institution for generations of families in Arakkonam and beyond.",
     
     // Department HODs
     departments: {
@@ -21,33 +27,40 @@ const SCHOOL_DATA = {
     
     // Contact Information
     contact: {
-        address: "123 Education Lane, Knowledge City, State 10101",
-        phone: "(555) 123-4567",
-        phone2: "(555) 123-4568",
-        email: "info@bgs.edu",
-        website: "www.bgs.edu",
-        emergency: "(555) 911-9111"
+        address: "Near 3MV8+8V9 Tamil Nadu Housing Board, Jothi Nagar Post, Arakkonam, Ranipet District, Tamil Nadu - 631003, India",
+        shortAddress: "Jothi Nagar Post, Arakkonam, Ranipet District, Tamil Nadu - 631003",
+        googleMaps: "https://maps.google.com/?q=Arakkonam",
+        phone: "+91 9042316004",
+        phone2: "+91 9043409567",
+        email: "principalbpspkm@gmail.com",
+        website: "bmhsschool.edu.in",
+        emergency: "+91 9042316004",
+        socialMedia: {
+            youtube: "https://www.youtube.com/channel/UCauxLutUdubhI2DVa5uHXgw",
+            instagram: "https://www.instagram.com/bharathidhasanar_schools/",
+            facebook: "https://www.facebook.com/BMHSSAKM"
+        }
     },
     
     // School Hours
     hours: {
-        regular: "8:00 AM - 3:00 PM (Monday to Friday)",
-        office: "7:30 AM - 4:30 PM (Monday to Friday)",
-        weekend: "9:00 AM - 1:00 PM (Saturday - Office only)",
+        regular: "8:00 AM - 6:00 PM (Monday to Saturday)",
+        office: "8:00 AM - 6:00 PM (Monday to Saturday)",
+        weekend: "Closed on Sundays",
         holidays: "Closed on public holidays",
-        summer: "Office hours: 9:00 AM - 2:00 PM"
+        summer: "Office hours: 9:00 AM - 2:00 PM (April-May)"
     },
     
     // Academic Information
     academics: {
-        grades: "Pre-K through 12th Grade",
+        grades: "Pre-KG to Class 12",
         curriculum: "CBSE with STEM Focus",
-        languages: "English (Primary), Spanish, French, Mandarin",
+        languages: "English, Tamil, Hindi, Sanskrit",
         specialPrograms: [
             "STEM Program",
-            "International Baccalaureate",
-            "Advanced Placement (AP)",
-            "Arts Integration",
+            "National Cadet Corps (NCC)",
+            "Advanced Science Program",
+            "Arts & Cultural Programs",
             "Sports Academy"
         ],
         faculty: "85+ certified teachers",
@@ -57,32 +70,33 @@ const SCHOOL_DATA = {
     // Facilities
     facilities: [
         "Science Labs (Physics, Chemistry, Biology)",
-        "Computer Labs with AI/ML setup",
-        "Library with 20,000+ books",
+        "Computer Labs with Latest Technology",
+        "Library with 25,000+ books",
         "Sports Complex (Indoor & Outdoor)",
-        "Swimming Pool",
+        "Basketball & Volleyball Courts",
         "Art and Music Studios",
-        "Auditorium (500 capacity)",
-        "Cafeteria with healthy meals",
-        "Medical Room with nurse",
+        "Auditorium (600 capacity)",
+        "Cafeteria with Hygienic Meals",
+        "Medical Room with Qualified Nurse",
         "Transportation Services"
     ],
     
     // Admission Process
     admissions: {
         process: [
-            "1. Submit online application form",
-            "2. Entrance assessment test",
+            "1. Submit online/offline application form",
+            "2. Entrance assessment test (for grades above 1)",
             "3. Student and parent interview",
             "4. Submit required documents",
             "5. Payment of admission fee"
         ],
         requirements: [
             "Birth Certificate",
-            "Previous school records",
-            "Transfer Certificate",
-            "Medical fitness certificate",
-            "4 passport-size photographs"
+            "Previous school Transfer Certificate (TC)",
+            "Mark sheets of previous classes",
+            "Aadhar Card copy (Student & Parents)",
+            "Caste Certificate (if applicable)",
+            "6 passport-size photographs"
         ],
         deadlines: {
             regular: "January 31st for next academic year",
@@ -90,92 +104,104 @@ const SCHOOL_DATA = {
             international: "December 31st"
         },
         ageCriteria: {
-            "Pre-K": "3-4 years",
-            "Kindergarten": "5 years",
-            "Grade 1": "6 years",
-            "Each grade": "+1 year increment"
+            "Pre-KG": "2.5-3 years",
+            "LKG": "3-4 years",
+            "UKG": "4-5 years",
+            "Class 1": "5-6 years",
+            "Each class": "+1 year increment"
         }
     },
     
-    // Fee Structure
+    // Fee Structure (in Indian Rupees)
     fees: {
-        registration: "$500 (one-time, non-refundable)",
+        registration: "₹10,000 (one-time, non-refundable)",
         tuition: {
-            "Pre-K to Grade 5": "$12,000/year",
-            "Grade 6 to 8": "$14,000/year",
-            "Grade 9 to 12": "$16,000/year"
+            "Pre-KG to Class 5": "₹75,000/year",
+            "Class 6 to 8": "₹85,000/year",
+            "Class 9 to 10": "₹95,000/year",
+            "Class 11 to 12": "₹1,10,000/year"
         },
         additional: {
-            "Transportation": "$1,500/year",
-            "Lunch": "$800/year",
-            "Activity Fee": "$300/year",
-            "Technology Fee": "$200/year"
+            "Transportation": "₹12,000/year",
+            "Lunch/Meals": "₹8,000/year",
+            "Activity Fee": "₹3,000/year",
+            "Lab/Technology Fee": "₹2,000/year"
         },
         payment: {
-            options: ["Annual", "Semi-annual", "Quarterly"],
+            options: ["Annual", "Semi-annual (2 installments)", "Quarterly (4 installments)"],
             discount: "5% discount on annual payment",
-            lateFee: "$50/month after due date"
+            lateFee: "₹500/month after due date"
         },
-        scholarships: "Available based on merit and need"
+        scholarships: "Available based on merit and financial need"
     },
     
     // Calendar 2024-2025
     calendar: {
         academicYear: "2024-2025",
-        start: "August 15, 2024",
-        end: "June 10, 2025",
+        start: "June 1, 2024",
+        end: "March 31, 2025",
         holidays: [
-            "Labor Day: September 2, 2024",
-            "Thanksgiving Break: November 25-29, 2024",
-            "Winter Break: December 23, 2024 - January 3, 2025",
-            "Spring Break: March 17-21, 2025",
-            "Memorial Day: May 26, 2025"
+            "Independence Day: August 15, 2024",
+            "Gandhi Jayanti: October 2, 2024",
+            "Diwali Break: October 28 - November 1, 2024",
+            "Pongal/Sankranti: January 14-16, 2025",
+            "Republic Day: January 26, 2025",
+            "Annual Day: February 2025",
+            "Holi: March 14, 2025"
         ],
         exams: {
-            term1: "October 14-18, 2024",
-            term2: "February 10-14, 2025",
-            final: "May 19-23, 2025"
+            term1: "September 15-25, 2024",
+            term2: "December 10-20, 2024",
+            final: "March 5-15, 2025"
         }
     },
     
     // Uniform
     uniform: {
-        summer: "Light blue shirt, navy blue pants/skirt, school tie",
-        winter: "White shirt, navy blue blazer, pants/skirt, tie",
-        sports: "White t-shirt, navy blue shorts/track pants",
+        summer: "Light blue shirt, navy blue pants/skirt, school tie, belt",
+        winter: "White shirt, navy blue blazer, pants/skirt, tie, belt",
+        sports: "White t-shirt with school logo, navy blue shorts/track pants",
         shoes: "Black leather shoes, white socks",
-        accessories: "School ID card mandatory, no jewelry"
+        accessories: "School ID card mandatory, minimal jewelry allowed for girls"
     },
     
     // Transportation
     transport: {
         available: true,
-        routes: "Covering all major areas of the city",
-        fees: "$1,500/year or $150/month",
-        timing: "Pickup: 7:00-7:30 AM, Drop: 3:30-4:00 PM",
-        contact: "Transport Incharge: Mr. David Lee (555) 123-4570"
+        routes: "Covering Chennai city and suburbs - 25+ routes",
+        fees: "₹12,000/year or ₹1,200/month",
+        timing: "Pickup: 6:30-7:30 AM, Drop: 4:00-5:00 PM",
+        contact: "Transport Incharge: Mr. Rajesh Kumar +91 98765 43211"
     },
     
     // Extracurricular
     extracurricular: {
-        sports: ["Basketball", "Soccer", "Swimming", "Cricket", "Table Tennis"],
-        clubs: ["Science Club", "Debate Society", "Music Band", "Drama Club", "Robotics"],
-        competitions: ["Science Fair", "Math Olympiad", "Sports Day", "Annual Day"]
+        sports: ["Cricket", "Football", "Basketball", "Volleyball", "Table Tennis", "Chess", "Athletics"],
+        clubs: ["Science Club", "Debate Society", "Music & Dance", "Drama Club", "Robotics Club", "Eco Club"],
+        competitions: ["Science Fair", "Math Olympiad", "Inter-school Sports", "Cultural Fest", "Annual Day"]
     },
     
     // Policies
     policies: {
-        attendance: "Minimum 75% required",
-        discipline: "Zero tolerance for bullying",
-        homework: "Daily assignments, weekly projects",
-        parentTeacher: "Monthly meetings, online portal access"
+        attendance: "Minimum 75% attendance required",
+        discipline: "Zero tolerance for bullying and indiscipline",
+        homework: "Regular homework and weekly projects",
+        parentTeacher: "Monthly PTM, online portal for progress tracking"
     }
+};
+
+// User session storage for AI personalization
+let userSession = {
+    designation: null,
+    name: null,
+    conversationHistory: []
 };
 
 // Configuration
 const CONFIG = {
-    useAI: false, // Set to true to enable DeepSeek AI responses
-    apiEndpoint: '/api/chat' // Vercel serverless function endpoint
+    useAI: true, // Enable DeepSeek AI for enhanced responses
+    apiEndpoint: '/api/chat',
+    logoPath: 'assets/logo.png' // School logo path
 };
 
 // DOM Elements
@@ -191,7 +217,14 @@ function addMessage(text, sender = 'bot', html = false) {
     
     const avatar = document.createElement('div');
     avatar.className = 'avatar';
-    avatar.innerHTML = sender === 'bot' ? '<i class="fas fa-robot"></i>' : '<i class="fas fa-user"></i>';
+    
+    if (sender === 'bot') {
+        // Use logo for bot avatar with fallback to initials
+        avatar.innerHTML = `<img src="assets/logo.png" alt="Bot" class="avatar-logo" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<div style=\\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:linear-gradient(135deg,#667eea,#764ba2);color:white;font-weight:bold;font-size:18px;\\'>BGS</div>';">`;
+    } else {
+        // Use user icon for user avatar
+        avatar.innerHTML = '<i class="fas fa-user"></i>';
+    }
     
     const content = document.createElement('div');
     content.className = 'content';
@@ -272,6 +305,12 @@ async function sendMessage(customMessage = null) {
     // Add user message
     addMessage(message, 'user');
     
+    // Add to conversation history
+    userSession.conversationHistory.push({
+        role: 'user',
+        content: message
+    });
+    
     // Clear input
     if (!customMessage) {
         userInput.value = '';
@@ -287,8 +326,8 @@ async function sendMessage(customMessage = null) {
         
         let response = getResponse(message);
         
-        // Optionally enhance with AI (if enabled and deployed)
-        if (CONFIG.useAI && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+        // Enhance with AI for complex queries if enabled
+        if (CONFIG.useAI && shouldUseAI(message)) {
             try {
                 const aiResponse = await getAIResponse(message);
                 if (aiResponse) {
@@ -296,15 +335,38 @@ async function sendMessage(customMessage = null) {
                 }
             } catch (error) {
                 console.error('AI request failed, using local response:', error);
-                // Fall back to local response
             }
         }
         
         addMessage(response, 'bot', true);
         
+        // Add to conversation history
+        userSession.conversationHistory.push({
+            role: 'assistant',
+            content: response
+        });
+        
+        // Save session
+        localStorage.setItem('bgs_user_session', JSON.stringify(userSession));
+        
         // Add quick suggestions for follow-up
         addSuggestions(message);
     }, 1000 + Math.random() * 500);
+}
+
+// Determine if AI should be used for this query
+function shouldUseAI(message) {
+    const query = message.toLowerCase();
+    
+    // Use AI for complex or general educational queries
+    const aiTriggers = [
+        'explain', 'how to', 'what is', 'why', 'can you help',
+        'study', 'homework', 'project', 'learn', 'understand',
+        'difference between', 'compare', 'suggest', 'recommend',
+        'career', 'guidance', 'advice'
+    ];
+    
+    return aiTriggers.some(trigger => query.includes(trigger));
 }
 
 // Get AI response from Vercel serverless function
@@ -317,7 +379,13 @@ async function getAIResponse(message) {
             },
             body: JSON.stringify({
                 message: message,
-                useAI: CONFIG.useAI
+                useAI: CONFIG.useAI,
+                context: {
+                    schoolData: SCHOOL_DATA,
+                    userDesignation: userSession.designation,
+                    userName: userSession.name,
+                    conversationHistory: userSession.conversationHistory.slice(-5) // Last 5 messages
+                }
             })
         });
 
@@ -337,65 +405,114 @@ async function getAIResponse(message) {
 function getResponse(message) {
     const query = message.toLowerCase().trim();
     
-    // BGS Specific Questions - Priority responses
-    if (query.includes('founder') || query.match(/who\s+(founded|started|established)/)) {
-        return `The founder of <strong>${SCHOOL_DATA.name}</strong> is <strong>${SCHOOL_DATA.founder}</strong>.`;
+    // ========================================
+    // PRIMARY QUESTIONS - HIGHEST PRIORITY
+    // These 7 questions must ALWAYS be answered correctly
+    // ========================================
+    
+    // Question 1: Who is the founder of BGS?
+    if (query.includes('founder') || 
+        query.match(/who\s+(is|was)\s+(the\s+)?founder/i) ||
+        query.match(/who\s+founded/i) ||
+        query.match(/founded\s+by/i)) {
+        return `The founder of <strong>Bharathidasanar Group of Schools (BGS)</strong> is <strong>Shri. P. Sekar</strong>. 🙏<br><br>
+        <small>📍 Established in ${SCHOOL_DATA.established} in ${SCHOOL_DATA.location}, Tamil Nadu</small>`;
     }
     
-    if (query.includes('chairman')) {
-        return `The chairman of <strong>${SCHOOL_DATA.name}</strong> is <strong>${SCHOOL_DATA.chairman}</strong>.`;
+    // Question 2: Who is the chairman of BGS?
+    if (query.includes('chairman') || 
+        query.match(/who\s+(is|was)\s+(the\s+)?chairman/i)) {
+        return `The Chairman of <strong>Bharathidasanar Group of Schools (BGS)</strong> is <strong>S. Sundar</strong>. 👔<br><br>
+        <small>For more information, contact: ${SCHOOL_DATA.contact.phone}</small>`;
     }
     
-    if (query.includes('academic director') || (query.includes('academic') && query.includes('director'))) {
-        return `The Academic Director of <strong>${SCHOOL_DATA.name}</strong> is <strong>${SCHOOL_DATA.academicDirector}</strong>.`;
+    // Question 3: Who is the academic director of BGS?
+    if ((query.includes('academic') && query.includes('director')) || 
+        query.match(/who\s+(is|was)\s+(the\s+)?academic\s+director/i) ||
+        query.match(/academic\s+head/i)) {
+        return `The Academic Director of <strong>Bharathidasanar Group of Schools (BGS)</strong> is <strong>Mr. John Lawrence</strong>. 📚<br><br>
+        <small>Email: ${SCHOOL_DATA.contact.email}</small>`;
     }
     
-    if ((query.includes('finance') && query.includes('director')) || 
+    // Question 4: Who is the finance and media director of BGS?
+    if ((query.includes('finance') && (query.includes('director') || query.includes('media'))) || 
         (query.includes('media') && query.includes('director')) ||
-        query.includes('finance and media')) {
-        return `The Finance and Media Director of <strong>${SCHOOL_DATA.name}</strong> is <strong>${SCHOOL_DATA.financeMediaDirector}</strong>.`;
+        query.match(/finance\s+(and|&)\s+media/i) ||
+        query.match(/who\s+(is|was)\s+(the\s+)?finance.*director/i)) {
+        return `The Finance and Media Director of <strong>Bharathidasanar Group of Schools (BGS)</strong> is <strong>S. Padma</strong>. 💼<br><br>
+        <small>Contact office: ${SCHOOL_DATA.contact.phone}</small>`;
     }
     
-    if (query.includes('principal') || query.includes('principe')) {
-        return `The Principal of <strong>${SCHOOL_DATA.name}</strong> is <strong>${SCHOOL_DATA.principal}</strong>.`;
+    // Question 5: Who is the principal of BGS?
+    if (query.includes('principal') || 
+        query.includes('principe') ||
+        query.match(/who\s+(is|was)\s+(the\s+)?principal/i) ||
+        query.match(/head\s+master/i) ||
+        query.match(/headmaster/i)) {
+        return `The Principal of <strong>Bharathidasanar Group of Schools (BGS)</strong> is <strong>Mr. Venkatesan</strong>. 🏫<br><br>
+        <small>📧 Email: ${SCHOOL_DATA.contact.email}<br>📞 Phone: ${SCHOOL_DATA.contact.phone}</small>`;
     }
     
-    if ((query.includes('hod') || query.includes('head of department')) && query.includes('english')) {
-        return `The Head of Department (HOD) of the English Department is <strong>${SCHOOL_DATA.departments.english.hod}</strong>.`;
+    // Question 6: Who is the HOD of English department?
+    if ((query.includes('hod') || query.includes('head of department') || query.includes('head')) && 
+        query.includes('english')) {
+        return `The Head of Department (HOD) of the English Department at <strong>Bharathidasanar Group of Schools (BGS)</strong> is <strong>Mr. Giri</strong>. 📖<br><br>
+        <small>For department inquiries, contact: ${SCHOOL_DATA.contact.email}</small>`;
     }
     
-    if (query.match(/how\s+(many|long)/i) && (query.includes('year') || query.includes('running') || query.includes('old'))) {
-        return `<strong>${SCHOOL_DATA.name}</strong> has been running for <strong>${SCHOOL_DATA.yearsRunning}</strong> since its establishment in <strong>${SCHOOL_DATA.established}</strong>.`;
+    // Question 7: How many years has our school been running?
+    if ((query.match(/how\s+(many|long)/i) || query.includes('years')) && 
+        (query.includes('running') || query.includes('old') || query.includes('been') || 
+         query.includes('established') || query.includes('since when'))) {
+        return `<strong>Bharathidasanar Group of Schools (BGS)</strong> has been running for <strong>44 years</strong>, established in <strong>1980</strong> in <strong>Arakkonam, Tamil Nadu</strong>. 🎉<br><br>
+        <em>${SCHOOL_DATA.tagline}</em><br><br>
+        <small>We are proud to be serving the community for over four decades!</small>`;
+    }
+    
+    // ========================================
+    // SECONDARY QUESTIONS
+    // ========================================
+    
+    // Check for user designation/introduction
+    if (detectUserDesignation(query)) {
+        return handleUserDesignation(query);
     }
     
     // Check for general leadership query
-    if (query.includes('leadership') || query.includes('management') || query.includes('who runs')) {
+    if (query.includes('leadership') || query.includes('management') || 
+        query.includes('who runs') || query.includes('administration') ||
+        query.match(/all\s+(staff|leaders|heads)/i)) {
         return formatLeadershipInfo();
     }
     
     // Check for specific patterns
-    if (query.includes('hello') || query.includes('hi') || query.includes('hey')) {
-        return `Hello! Welcome to <strong>${SCHOOL_DATA.name}</strong>. How can I assist you today?`;
+    if (query.includes('hello') || query.includes('hi') || query.includes('hey') || 
+        query.includes('namaste') || query.includes('vanakkam')) {
+        const greeting = userSession.designation 
+            ? `🙏 Vanakkam ${userSession.name || ''}! Welcome back to <strong>${SCHOOL_DATA.name}</strong>, ${SCHOOL_DATA.location}. As a ${userSession.designation}, how can I assist you today?`
+            : `🙏 Vanakkam! Welcome to <strong>${SCHOOL_DATA.name}</strong>, ${SCHOOL_DATA.location}. ${SCHOOL_DATA.motto}. How can I assist you today?`;
+        return greeting;
     }
     
     if (query.includes('thank')) {
-        return `You're welcome! 😊 If you have more questions, feel free to ask.`;
+        return `You're welcome! 😊 If you have more questions about ${SCHOOL_DATA.name}, feel free to ask.`;
     }
     
     if (query.includes('hour') || query.includes('time') || query.includes('open')) {
         return formatSchoolHours();
     }
     
-    if (query.includes('contact') || query.includes('phone') || query.includes('email')) {
+    if (query.includes('contact') || query.includes('phone') || query.includes('email') || query.includes('call')) {
         return formatContactInfo();
     }
     
-    if (query.includes('address') || query.includes('location')) {
-        return `Our school is located at:<br><strong>${SCHOOL_DATA.contact.address}</strong><br><br>You can find us on Google Maps: <a href="#" style="color: #4f46e5;">View on Map</a>`;
+    if (query.includes('address') || query.includes('location') || query.includes('where') || query.includes('direction')) {
+        return formatAddressInfo();
     }
     
-    if (query.includes('principal') || query.includes('head')) {
-        return `Our Principal is <strong>${SCHOOL_DATA.principal}</strong> and Vice Principal is <strong>${SCHOOL_DATA.vicePrincipal}</strong>.`;
+    if (query.includes('social') || query.includes('facebook') || query.includes('instagram') || 
+        query.includes('youtube') || query.includes('media')) {
+        return formatSocialMediaInfo();
     }
     
     if (query.includes('admission') || query.includes('apply') || query.includes('enroll')) {
@@ -435,47 +552,140 @@ function getResponse(message) {
     }
     
     if (query.includes('help')) {
-        return `I can help you with information about:<br><br>
+        return `I can help you with information about <strong>${SCHOOL_DATA.name}</strong>:<br><br>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
             <div><i class="fas fa-user-tie"></i> Leadership Team</div>
             <div><i class="fas fa-clock"></i> School Hours</div>
             <div><i class="fas fa-phone"></i> Contact Info</div>
             <div><i class="fas fa-file-signature"></i> Admissions</div>
-            <div><i class="fas fa-dollar-sign"></i> Fee Structure</div>
+            <div><i class="fas fa-rupee-sign"></i> Fee Structure</div>
             <div><i class="fas fa-tshirt"></i> Uniform Policy</div>
             <div><i class="fas fa-calendar"></i> School Calendar</div>
             <div><i class="fas fa-bus"></i> Transportation</div>
             <div><i class="fas fa-book"></i> Curriculum</div>
         </div><br>
-        Try asking about any of these topics!`;
-    }
-    
-    if (query.includes('about') || query.includes('school info')) {
-        return `About <strong>${SCHOOL_DATA.name}</strong>:<br><br>
-        • Established: ${SCHOOL_DATA.established}<br>
-        • Years Running: ${SCHOOL_DATA.yearsRunning}<br>
+        <strong>🎯 Quick Facts:</strong><br>
         • Founder: ${SCHOOL_DATA.founder}<br>
         • Chairman: ${SCHOOL_DATA.chairman}<br>
         • Principal: ${SCHOOL_DATA.principal}<br>
-        • Motto: "${SCHOOL_DATA.motto}"<br>
-        • Grades: ${SCHOOL_DATA.academics.grades}<br>
-        • Students: 1200+<br>
-        • Faculty: ${SCHOOL_DATA.academics.faculty}<br>
-        • Curriculum: ${SCHOOL_DATA.academics.curriculum}<br><br>
-        We provide quality education with a focus on holistic development.`;
+        • Running since: ${SCHOOL_DATA.yearsRunning}<br><br>
+        Try asking about any of these topics!`;
+    }
+    
+    if (query.includes('about') || query.includes('school info') || query.includes('history')) {
+        return formatAboutInfo();
     }
     
     // Default response
     return `I understand you're asking about: <strong>"${message}"</strong><br><br>
-    I can help you with school-related information. Here are some things you can ask:<br>
+    I can help you with information about ${SCHOOL_DATA.name}, ${SCHOOL_DATA.location}. Here are our key people:<br><br>
+    <strong>👥 Leadership:</strong><br>
+    • Founder: <strong>${SCHOOL_DATA.founder}</strong><br>
+    • Chairman: <strong>${SCHOOL_DATA.chairman}</strong><br>
+    • Academic Director: <strong>${SCHOOL_DATA.academicDirector}</strong><br>
+    • Finance & Media Director: <strong>${SCHOOL_DATA.financeMediaDirector}</strong><br>
+    • Principal: <strong>${SCHOOL_DATA.principal}</strong><br>
+    • English HOD: <strong>${SCHOOL_DATA.departments.english.hod}</strong><br>
+    • Years Running: <strong>${SCHOOL_DATA.yearsRunning}</strong><br><br>
+    
+    <strong>📍 Location:</strong> ${SCHOOL_DATA.location}, Tamil Nadu<br>
+    <strong>📞 Contact:</strong> ${SCHOOL_DATA.contact.phone}<br><br>
+    
+    <strong>📚 Common Questions:</strong><br>
     • What are the school hours?<br>
     • How do I apply for admission?<br>
     • What is the fee structure?<br>
-    • What is the uniform policy?<br>
-    • When are the holidays?<br>
-    • Is transportation available?<br>
-    • What curriculum do you follow?<br><br>
+    • Where is the school located?<br><br>
     Try rephrasing your question or click on the quick question buttons!`;
+}
+
+// Detect user designation from message
+function detectUserDesignation(query) {
+    const designationPatterns = [
+        /i am a (student|parent|teacher|staff|visitor|guardian)/i,
+        /i'm a (student|parent|teacher|staff|visitor|guardian)/i,
+        /my name is ([a-z\s]+) and i am a (student|parent|teacher)/i,
+        /i am ([a-z\s]+),?\s*(student|parent|teacher)?/i
+    ];
+    
+    return designationPatterns.some(pattern => pattern.test(query));
+}
+
+// Handle user designation
+function handleUserDesignation(query) {
+    const designationMatch = query.match(/i am a (student|parent|teacher|staff|visitor|guardian)/i) ||
+                            query.match(/i'm a (student|parent|teacher|staff|visitor|guardian)/i);
+    
+    const nameMatch = query.match(/my name is ([a-z\s]+)/i) ||
+                     query.match(/i am ([a-z\s]+),/i);
+    
+    if (designationMatch) {
+        userSession.designation = designationMatch[1].toLowerCase();
+    }
+    
+    if (nameMatch) {
+        userSession.name = nameMatch[1].trim();
+    }
+    
+    // Save to localStorage
+    localStorage.setItem('bgs_user_session', JSON.stringify(userSession));
+    
+    let response = `Thank you for introducing yourself${userSession.name ? ', ' + userSession.name : ''}! `;
+    
+    switch(userSession.designation) {
+        case 'student':
+            response += `As a student of <strong>${SCHOOL_DATA.name}</strong>, I can help you with:<br>
+            • Class schedules and homework<br>
+            • Exam dates and results<br>
+            • Extracurricular activities<br>
+            • School events and competitions<br>
+            • Library and lab facilities<br><br>
+            What would you like to know?`;
+            break;
+        case 'parent':
+        case 'guardian':
+            response += `As a parent, I can assist you with:<br>
+            • Admission procedures<br>
+            • Fee structure and payment details<br>
+            • Academic performance and PTMs<br>
+            • School policies and safety measures<br>
+            • Transportation and facilities<br><br>
+            How can I help you today?`;
+            break;
+        case 'teacher':
+        case 'staff':
+            response += `Welcome! I can provide information about:<br>
+            • School policies and guidelines<br>
+            • Academic calendar<br>
+            • Facilities and resources<br>
+            • Contact information<br><br>
+            What information do you need?`;
+            break;
+        case 'visitor':
+            response += `Welcome to <strong>${SCHOOL_DATA.name}</strong>! I can help you with:<br>
+            • School tour and facilities<br>
+            • Admission information<br>
+            • Contact details<br>
+            • School achievements<br><br>
+            What would you like to know?`;
+            break;
+        default:
+            response += `I'm here to help you with any questions about ${SCHOOL_DATA.name}. What would you like to know?`;
+    }
+    
+    return response;
+}
+
+// Load user session on page load
+function loadUserSession() {
+    const saved = localStorage.getItem('bgs_user_session');
+    if (saved) {
+        try {
+            userSession = JSON.parse(saved);
+        } catch (e) {
+            console.error('Error loading user session:', e);
+        }
+    }
 }
 
 // Formatting functions
@@ -484,161 +694,170 @@ function formatSchoolHours() {
     <div style="background: #f8fafc; padding: 15px; border-radius: 10px; border-left: 4px solid #4f46e5;">
         🏫 <strong>Regular School:</strong> ${SCHOOL_DATA.hours.regular}<br>
         🏢 <strong>Office Hours:</strong> ${SCHOOL_DATA.hours.office}<br>
-        📅 <strong>Weekend Office:</strong> ${SCHOOL_DATA.hours.weekend}<br>
+        📅 <strong>Weekend:</strong> ${SCHOOL_DATA.hours.weekend}<br>
         🏖️ <strong>Summer Hours:</strong> ${SCHOOL_DATA.hours.summer}<br>
-        ⚠️ <strong>Note:</strong> ${SCHOOL_DATA.hours.holidays}
+        ⚠️ <strong>Note:</strong> ${SCHOOL_DATA.hours.holidays}<br><br>
+        <small>📞 For urgent matters: ${SCHOOL_DATA.contact.phone}</small>
     </div>`;
 }
 
 function formatContactInfo() {
-    return `<strong>Contact Information:</strong><br><br>
+    return `<strong>📞 Contact Information:</strong><br><br>
     <div style="background: #f8fafc; padding: 15px; border-radius: 10px; border-left: 4px solid #10b981;">
-        📍 <strong>Address:</strong> ${SCHOOL_DATA.contact.address}<br>
-        📞 <strong>Phone:</strong> ${SCHOOL_DATA.contact.phone} (Main)<br>
-        📱 <strong>Phone 2:</strong> ${SCHOOL_DATA.contact.phone2}<br>
-        🚨 <strong>Emergency:</strong> ${SCHOOL_DATA.contact.emergency}<br>
-        📧 <strong>Email:</strong> ${SCHOOL_DATA.contact.email}<br>
-        🌐 <strong>Website:</strong> ${SCHOOL_DATA.contact.website}
-    </div>`;
+        <strong>📍 Address:</strong><br>
+        ${SCHOOL_DATA.contact.shortAddress}<br><br>
+        
+        <strong>📱 Phone Numbers:</strong><br>
+        • Main: <a href="tel:${SCHOOL_DATA.contact.phone}">${SCHOOL_DATA.contact.phone}</a><br>
+        • Alternate: <a href="tel:${SCHOOL_DATA.contact.phone2}">${SCHOOL_DATA.contact.phone2}</a><br><br>
+        
+        <strong>🚨 Emergency:</strong> ${SCHOOL_DATA.contact.emergency}<br><br>
+        
+        <strong>📧 Email:</strong><br>
+        <a href="mailto:${SCHOOL_DATA.contact.email}">${SCHOOL_DATA.contact.email}</a><br><br>
+        
+        <strong>🌐 Website:</strong><br>
+        <a href="http://${SCHOOL_DATA.contact.website}" target="_blank">${SCHOOL_DATA.contact.website}</a><br><br>
+        
+        <strong>⏰ Working Hours:</strong> ${SCHOOL_DATA.hours.regular}
+    </div><br>
+    <small>💡 <strong>Tip:</strong> Click on phone numbers to call directly!</small>`;
 }
 
-function formatAdmissionInfo() {
-    return `<strong>Admission Process:</strong><br><br>
+function formatAddressInfo() {
+    return `<strong>📍 School Location:</strong><br><br>
     <div style="background: #f8fafc; padding: 15px; border-radius: 10px; border-left: 4px solid #f59e0b;">
-        <strong>Steps:</strong><br>
-        ${SCHOOL_DATA.admissions.process.map(step => `• ${step}`).join('<br>')}<br><br>
+        <strong>Complete Address:</strong><br>
+        ${SCHOOL_DATA.contact.address}<br><br>
         
-        <strong>Required Documents:</strong><br>
-        ${SCHOOL_DATA.admissions.requirements.map(doc => `• ${doc}`).join('<br>')}<br><br>
+        <strong>🗺️ Get Directions:</strong><br>
+        <a href="${SCHOOL_DATA.contact.googleMaps}" target="_blank" style="color: #4f46e5; font-weight: 600;">
+            📍 Open in Google Maps (Arakkonam)
+        </a><br><br>
         
-        <strong>Deadlines:</strong><br>
-        • Regular: ${SCHOOL_DATA.admissions.deadlines.regular}<br>
-        • Late: ${SCHOOL_DATA.admissions.deadlines.late}<br>
-        • International: ${SCHOOL_DATA.admissions.deadlines.international}<br><br>
+        <strong>🏛️ Landmark:</strong> Near Tamil Nadu Housing Board, Jothi Nagar<br>
+        <strong>📮 Pin Code:</strong> 631003<br>
+        <strong>🏙️ City:</strong> Arakkonam<br>
+        <strong>📍 District:</strong> Ranipet<br>
+        <strong>🌏 State:</strong> Tamil Nadu, India<br><br>
         
-        <strong>Age Criteria:</strong><br>
-        ${Object.entries(SCHOOL_DATA.admissions.ageCriteria).map(([grade, age]) => `• ${grade}: ${age}`).join('<br>')}
+        <strong>📞 For Directions Help:</strong> ${SCHOOL_DATA.contact.phone}
     </div>`;
 }
 
-function formatFeeStructure() {
-    return `<strong>Fee Structure 2024-2025:</strong><br><br>
-    <div style="background: #f8fafc; padding: 15px; border-radius: 10px; border-left: 4px solid #ef4444;">
-        <strong>Registration Fee:</strong><br>
-        • ${SCHOOL_DATA.fees.registration}<br><br>
-        
-        <strong>Annual Tuition Fees:</strong><br>
-        ${Object.entries(SCHOOL_DATA.fees.tuition).map(([grade, fee]) => `• ${grade}: ${fee}`).join('<br>')}<br><br>
-        
-        <strong>Additional Fees:</strong><br>
-        ${Object.entries(SCHOOL_DATA.fees.additional).map(([item, fee]) => `• ${item}: ${fee}`).join('<br>')}<br><br>
-        
-        <strong>Payment Options:</strong><br>
-        • ${SCHOOL_DATA.fees.payment.options.join(', ')}<br>
-        • ${SCHOOL_DATA.fees.payment.discount}<br>
-        • ${SCHOOL_DATA.fees.payment.lateFee}<br><br>
-        
-        <strong>Note:</strong> ${SCHOOL_DATA.fees.scholarships}
-    </div>`;
-}
-
-function formatUniformInfo() {
-    return `<strong>Uniform Policy:</strong><br><br>
-    <div style="background: #f8fafc; padding: 15px; border-radius: 10px; border-left: 4px solid #8b5cf6;">
-        <strong>Summer Uniform:</strong><br>
-        • ${SCHOOL_DATA.uniform.summer}<br><br>
-        
-        <strong>Winter Uniform:</strong><br>
-        • ${SCHOOL_DATA.uniform.winter}<br><br>
-        
-        <strong>Sports Uniform:</strong><br>
-        • ${SCHOOL_DATA.uniform.sports}<br><br>
-        
-        <strong>Shoes:</strong> ${SCHOOL_DATA.uniform.shoes}<br>
-        <strong>Accessories:</strong> ${SCHOOL_DATA.uniform.accessories}
-    </div>`;
-}
-
-function formatHolidayInfo() {
-    return `<strong>Holiday Calendar 2024-2025:</strong><br><br>
-    <div style="background: #f8fafc; padding: 15px; border-radius: 10px; border-left: 4px solid #f97316;">
-        <strong>Academic Year:</strong> ${SCHOOL_DATA.calendar.academicYear}<br>
-        <strong>Start Date:</strong> ${SCHOOL_DATA.calendar.start}<br>
-        <strong>End Date:</strong> ${SCHOOL_DATA.calendar.end}<br><br>
-        
-        <strong>Major Holidays:</strong><br>
-        ${SCHOOL_DATA.calendar.holidays.map(holiday => `• ${holiday}`).join('<br>')}<br><br>
-        
-        <strong>Exam Periods:</strong><br>
-        • Term 1: ${SCHOOL_DATA.calendar.exams.term1}<br>
-        • Term 2: ${SCHOOL_DATA.calendar.exams.term2}<br>
-        • Final: ${SCHOOL_DATA.calendar.exams.final}
-    </div>`;
-}
-
-function formatTransportInfo() {
-    return SCHOOL_DATA.transport.available ? 
-        `<strong>Transportation Services:</strong><br><br>
-        <div style="background: #f8fafc; padding: 15px; border-radius: 10px; border-left: 4px solid #06b6d4;">
-            ✅ <strong>Available:</strong> Yes<br>
-            🗺️ <strong>Routes:</strong> ${SCHOOL_DATA.transport.routes}<br>
-            💰 <strong>Fees:</strong> ${SCHOOL_DATA.transport.fees}<br>
-            ⏰ <strong>Timings:</strong> ${SCHOOL_DATA.transport.timing}<br>
-            📞 <strong>Contact:</strong> ${SCHOOL_DATA.transport.contact}
-        </div>` :
-        `🚫 <strong>Transportation:</strong> Currently not available.`;
-}
-
-function formatCurriculumInfo() {
-    return `<strong>Curriculum Information:</strong><br><br>
-    <div style="background: #f8fafc; padding: 15px; border-radius: 10px; border-left: 4px solid #84cc16;">
-        <strong>Grades Offered:</strong> ${SCHOOL_DATA.academics.grades}<br>
-        <strong>Curriculum:</strong> ${SCHOOL_DATA.academics.curriculum}<br>
-        <strong>Languages:</strong> ${SCHOOL_DATA.academics.languages}<br>
-        <strong>Student-Teacher Ratio:</strong> ${SCHOOL_DATA.academics.studentRatio}<br><br>
-        
-        <strong>Special Programs:</strong><br>
-        ${SCHOOL_DATA.academics.specialPrograms.map(program => `• ${program}`).join('<br>')}
-    </div>`;
-}
-
-function formatFacilities() {
-    return `<strong>School Facilities:</strong><br><br>
+function formatSocialMediaInfo() {
+    return `<strong>🌐 Connect With Us:</strong><br><br>
     <div style="background: #f8fafc; padding: 15px; border-radius: 10px; border-left: 4px solid #ec4899;">
-        ${SCHOOL_DATA.facilities.map(facility => `🏛️ ${facility}`).join('<br>')}
+        <strong>Follow us on social media for latest updates:</strong><br><br>
+        
+        <div style="margin: 10px 0;">
+            <strong style="color: #FF0000;">📺 YouTube:</strong><br>
+            <a href="${SCHOOL_DATA.contact.socialMedia.youtube}" target="_blank" style="color: #4f46e5;">
+                ${SCHOOL_DATA.contact.socialMedia.youtube}
+            </a>
+        </div>
+        
+        <div style="margin: 10px 0;">
+            <strong style="color: #E4405F;">📸 Instagram:</strong><br>
+            <a href="${SCHOOL_DATA.contact.socialMedia.instagram}" target="_blank" style="color: #4f46e5;">
+                @bharathidhasanar_schools
+            </a>
+        </div>
+        
+        <div style="margin: 10px 0;">
+            <strong style="color: #1877F2;">👥 Facebook:</strong><br>
+            <a href="${SCHOOL_DATA.contact.socialMedia.facebook}" target="_blank" style="color: #4f46e5;">
+                BMHSSAKM
+            </a>
+        </div>
+        
+        <br>
+        <strong>🌐 Website:</strong> <a href="http://${SCHOOL_DATA.contact.website}" target="_blank">${SCHOOL_DATA.contact.website}</a><br>
+        <strong>📧 Email:</strong> <a href="mailto:${SCHOOL_DATA.contact.email}">${SCHOOL_DATA.contact.email}</a><br>
+        <strong>📞 Phone:</strong> ${SCHOOL_DATA.contact.phone}
     </div>`;
 }
 
-function formatExtracurricular() {
-    return `<strong>Extracurricular Activities:</strong><br><br>
-    <div style="background: #f8fafc; padding: 15px; border-radius: 10px; border-left: 4px solid #f43f5e;">
-        <strong>Sports:</strong><br>
-        ${SCHOOL_DATA.extracurricular.sports.map(sport => `• ${sport}`).join('<br>')}<br><br>
+function formatAboutInfo() {
+    return `<strong>About ${SCHOOL_DATA.name}:</strong><br><br>
+    <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 4px solid #4f46e5;">
+        <div style="margin-bottom: 20px;">
+            <strong style="font-size: 18px; color: #4f46e5;">🎓 ${SCHOOL_DATA.tagline}</strong><br>
+            <em style="color: #6b7280;">${SCHOOL_DATA.motto}</em>
+        </div>
         
-        <strong>Clubs & Societies:</strong><br>
-        ${SCHOOL_DATA.extracurricular.clubs.map(club => `• ${club}`).join('<br>')}<br><br>
+        <p style="line-height: 1.8; margin-bottom: 15px;">
+            ${SCHOOL_DATA.about}
+        </p>
         
-        <strong>Annual Competitions:</strong><br>
-        ${SCHOOL_DATA.extracurricular.competitions.map(comp => `• ${comp}`).join('<br>')}
-    </div>`;
-}
-
-function formatCalendar() {
-    return formatHolidayInfo(); // Reuse holiday info for now
+        <div style="border-top: 2px solid #e5e7eb; padding-top: 15px; margin-top: 15px;">
+            <strong>📊 Quick Facts:</strong><br><br>
+            • <strong>Founder:</strong> ${SCHOOL_DATA.founder}<br>
+            • <strong>Chairman:</strong> ${SCHOOL_DATA.chairman}<br>
+            • <strong>Academic Director:</strong> ${SCHOOL_DATA.academicDirector}<br>
+            • <strong>Finance & Media Director:</strong> ${SCHOOL_DATA.financeMediaDirector}<br>
+            • <strong>Principal:</strong> ${SCHOOL_DATA.principal}<br>
+            • <strong>English HOD:</strong> ${SCHOOL_DATA.departments.english.hod}<br>
+            • <strong>Established:</strong> ${SCHOOL_DATA.established}<br>
+            • <strong>Experience:</strong> ${SCHOOL_DATA.yearsRunning}<br>
+            • <strong>Location:</strong> ${SCHOOL_DATA.location}, Tamil Nadu<br>
+            • <strong>Classes:</strong> ${SCHOOL_DATA.academics.grades}<br>
+            • <strong>Curriculum:</strong> ${SCHOOL_DATA.academics.curriculum}<br>
+            • <strong>Students:</strong> 1200+<br>
+            • <strong>Faculty:</strong> ${SCHOOL_DATA.academics.faculty}
+        </div>
+        
+        <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #e5e7eb;">
+            <strong>📞 Contact Us:</strong><br>
+            Phone: ${SCHOOL_DATA.contact.phone}<br>
+            Email: ${SCHOOL_DATA.contact.email}<br>
+            Website: ${SCHOOL_DATA.contact.website}
+        </div>
+    </div><br>
+    <small>💡 <strong>Connect with us on social media for latest updates!</strong></small>`;
 }
 
 // New formatting function for leadership info
 function formatLeadershipInfo() {
-    return `<strong>BGS Leadership Team:</strong><br><br>
-    <div style="background: #f8fafc; padding: 15px; border-radius: 10px; border-left: 4px solid #4f46e5;">
-        👤 <strong>Founder:</strong> ${SCHOOL_DATA.founder}<br>
-        🎯 <strong>Chairman:</strong> ${SCHOOL_DATA.chairman}<br>
-        📚 <strong>Academic Director:</strong> ${SCHOOL_DATA.academicDirector}<br>
-        💼 <strong>Finance & Media Director:</strong> ${SCHOOL_DATA.financeMediaDirector}<br>
-        🏫 <strong>Principal:</strong> ${SCHOOL_DATA.principal}<br><br>
+    return `<strong>👥 ${SCHOOL_DATA.name} Leadership Team:</strong><br><br>
+    <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border-left: 4px solid #4f46e5;">
+        <div style="margin-bottom: 15px;">
+            <strong style="color: #4f46e5; font-size: 16px;">🎯 Founder</strong><br>
+            <span style="font-size: 18px; font-weight: 600;">${SCHOOL_DATA.founder}</span><br>
+            <small>Established BGS in ${SCHOOL_DATA.established} in ${SCHOOL_DATA.location}</small>
+        </div>
         
-        <strong>Department Heads:</strong><br>
-        📖 <strong>English HOD:</strong> ${SCHOOL_DATA.departments.english.hod}
+        <div style="margin-bottom: 15px;">
+            <strong style="color: #4f46e5; font-size: 16px;">👔 Chairman</strong><br>
+            <span style="font-size: 18px; font-weight: 600;">${SCHOOL_DATA.chairman}</span>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <strong style="color: #4f46e5; font-size: 16px;">📚 Academic Director</strong><br>
+            <span style="font-size: 18px; font-weight: 600;">${SCHOOL_DATA.academicDirector}</span>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <strong style="color: #4f46e5; font-size: 16px;">💼 Finance & Media Director</strong><br>
+            <span style="font-size: 18px; font-weight: 600;">${SCHOOL_DATA.financeMediaDirector}</span>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+            <strong style="color: #4f46e5; font-size: 16px;">🏫 Principal</strong><br>
+            <span style="font-size: 18px; font-weight: 600;">${SCHOOL_DATA.principal}</span><br>
+            <small>📧 ${SCHOOL_DATA.contact.email}</small>
+        </div>
+        
+        <div style="border-top: 2px solid #e5e7eb; padding-top: 15px; margin-top: 15px;">
+            <strong style="color: #4f46e5; font-size: 16px;">📖 Department Heads</strong><br>
+            <span style="font-weight: 600;">English HOD:</span> ${SCHOOL_DATA.departments.english.hod}
+        </div>
+        
+        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e5e7eb;">
+            <strong>🎉 Established:</strong> ${SCHOOL_DATA.established} (${SCHOOL_DATA.yearsRunning})<br>
+            <strong>📍 Location:</strong> ${SCHOOL_DATA.location}, Ranipet District, Tamil Nadu<br>
+            <strong>📞 Contact:</strong> ${SCHOOL_DATA.contact.phone}
+        </div>
     </div>`;
 }
 
@@ -728,6 +947,9 @@ function startVoiceInput() {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
+    // Load user session
+    loadUserSession();
+    
     // Focus on input
     userInput.focus();
     

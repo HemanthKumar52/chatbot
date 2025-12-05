@@ -20,16 +20,76 @@ export default async function handler(req, res) {
     }
 
     try {
-        const { message, useAI } = req.body;
+        const { message, useAI, context } = req.body;
 
         if (!message) {
             return res.status(400).json({ error: 'Message is required' });
         }
 
-        // If AI is disabled, return null (client will use local responses)
         if (!useAI) {
             return res.status(200).json({ aiResponse: null });
         }
+
+        // Build system message with school context and user designation
+        let systemMessage = `You are a helpful AI assistant for Bharathidasanar Group of School (BGS), an Indian educational institution in Chennai, Tamil Nadu.
+
+School Information:
+- Founder: Shri. P. Sekar
+- Chairman: S. Sundar
+- Academic Director: Mr. John Lawrence
+- Finance & Media Director: S. Padma
+- Principal: Mr. Venkatesan
+- English HOD: Mr. Giri
+- Established: 1980 (44 years running)
+- Curriculum: CBSE
+- Classes: Pre-KG to Class 12
+- Languages: English, Tamil, Hindi, Sanskrit
+
+Cultural Context:
+- Use Indian educational terminology (Class instead of Grade, TC instead of Transfer Certificate)
+- Currency in Indian Rupees (₹)
+- Indian festivals and holidays
+- Respect for traditional Indian values and culture
+- Use respectful greetings like "Vanakkam" when appropriate
+
+Guidelines:
+1. Provide accurate, helpful information about the school
+2. Be respectful and professional
+3. For academic help, guide students but don't give direct answers
+4. Respect Indian cultural values and educational system
+5. If asked about topics outside school scope, politely redirect`;
+
+        // Add user designation context if available
+        if (context?.userDesignation) {
+            systemMessage += `\n\nUser Context:
+- Designation: ${context.userDesignation}
+- Name: ${context.userName || 'Not provided'}
+
+Tailor your responses based on the user's designation:
+- Students: Focus on learning, study tips, exams, activities
+- Parents: Focus on admissions, fees, policies, child's progress
+- Teachers: Focus on academic matters, policies, resources
+- Visitors: Focus on school tour, admissions, facilities`;
+        }
+
+        // Build messages array with conversation history
+        const messages = [
+            {
+                role: 'system',
+                content: systemMessage
+            }
+        ];
+
+        // Add recent conversation history for context
+        if (context?.conversationHistory && context.conversationHistory.length > 0) {
+            messages.push(...context.conversationHistory);
+        }
+
+        // Add current message
+        messages.push({
+            role: 'user',
+            content: message
+        });
 
         // Call DeepSeek API
         const deepseekResponse = await fetch('https://api.deepseek.com/v1/chat/completions', {
@@ -40,27 +100,10 @@ export default async function handler(req, res) {
             },
             body: JSON.stringify({
                 model: 'deepseek-chat',
-                messages: [
-                    {
-                        role: 'system',
-                        content: `You are a helpful assistant for BGS International School. Here's the school information:
-                        - Founder: Shri. P. Sekar
-                        - Chairman: S. Sundar
-                        - Academic Director: Mr. John Lawrence
-                        - Finance & Media Director: S. Padma
-                        - Principal: Mr. Venkatesan
-                        - English HOD: Mr. Giri
-                        - Established: 1980 (44 years running)
-                        
-                        Answer questions about the school accurately and professionally. If asked about specific people or facts, use this information.`
-                    },
-                    {
-                        role: 'user',
-                        content: message
-                    }
-                ],
+                messages: messages,
                 max_tokens: 2000,
-                temperature: 0.7
+                temperature: 0.7,
+                top_p: 0.95
             })
         });
 

@@ -84,9 +84,20 @@ const server = http.createServer((req, res) => {
     
     fs.readFile(filePath, (error, content) => {
         if (error) {
+            // If file not found in root, try looking in public folder
             if (error.code === 'ENOENT') {
-                res.writeHead(404, { 'Content-Type': 'text/html' });
-                res.end('<h1>404 - File Not Found</h1>', 'utf-8');
+                const publicPath = path.join(__dirname, 'public', req.url);
+                fs.readFile(publicPath, (err, publicContent) => {
+                    if (err) {
+                        // If still not found, return 404
+                        res.writeHead(404, { 'Content-Type': 'text/html' });
+                        res.end('<h1>404 - File Not Found</h1>', 'utf-8');
+                    } else {
+                        // Found in public folder
+                        res.writeHead(200, { 'Content-Type': contentType });
+                        res.end(publicContent, 'utf-8');
+                    }
+                });
             } else {
                 res.writeHead(500);
                 res.end('Server Error: ' + error.code);

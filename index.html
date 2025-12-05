@@ -3,17 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BGS International School - Chatbot</title>
+    <title>Bharathidasanar Group of Schools - Chatbot</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="shortcut icon" type="image/png" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="sidebar-header">
-                <i class="fas fa-graduation-cap"></i>
-                <h2>BGS School</h2>
+                <img src="assets/logo.png" alt="BGS Logo" class="school-logo">
+                <div class="school-info">
+                    <h2>BGS</h2>
+                    <p class="school-subtitle">Bharathidasanar Group of Schools</p>
+                </div>
             </div>
             
             <div class="quick-questions">
@@ -23,7 +32,7 @@
                 <button onclick="askQuickQuestion('hours')"><i class="fas fa-clock"></i> School Hours</button>
                 <button onclick="askQuickQuestion('contact')"><i class="fas fa-phone"></i> Contact</button>
                 <button onclick="askQuickQuestion('admissions')"><i class="fas fa-file-signature"></i> Admissions</button>
-                <button onclick="askQuickQuestion('fees')"><i class="fas fa-dollar-sign"></i> Fees</button>
+                <button onclick="askQuickQuestion('fees')"><i class="fas fa-rupee-sign"></i> Fees</button>
                 <button onclick="askQuickQuestion('uniform')"><i class="fas fa-tshirt"></i> Uniform</button>
                 <button onclick="askQuickQuestion('holidays')"><i class="fas fa-calendar"></i> Holidays</button>
                 <button onclick="askQuickQuestion('transport')"><i class="fas fa-bus"></i> Transport</button>
@@ -43,10 +52,10 @@
             <!-- Header -->
             <div class="chat-header">
                 <div class="header-info">
-                    <i class="fas fa-robot"></i>
+                    <img src="assets/logo.png" alt="BGS" class="header-logo">
                     <div>
                         <h1>School Assistant</h1>
-                        <p>Ask me anything about BGS International School</p>
+                        <p>Ask me anything about Bharathidasanar Group of Schools</p>
                     </div>
                 </div>
             </div>
@@ -55,19 +64,21 @@
             <div class="messages" id="messages">
                 <div class="message bot">
                     <div class="avatar">
-                        <i class="fas fa-robot"></i>
+                        <img src="assets/logo.png" alt="Bot" class="avatar-logo">
                     </div>
                     <div class="content">
                         <div class="sender">School Assistant</div>
                         <div class="text">
-                            👋 Hello! Welcome to <strong>BGS International School</strong> chatbot.<br><br>
+                            🙏 Vanakkam! Welcome to <strong>Bharathidasanar Group of Schools</strong> chatbot.<br><br>
                             I can help you with information about our school. Try asking:
                             <ul style="margin: 10px 0; padding-left: 20px;">
                                 <li>Who is the founder?</li>
-                                <li>How long has the school been running?</li>
+                                <li>Who is the Finance and Media Director?</li>
+                                <li>Who is the HOD of English department?</li>
+                                <li>How many years has the school been running?</li>
                                 <li>What are the admission requirements?</li>
-                                <li>What is the fee structure?</li>
                             </ul>
+                            <br><small>💡 <strong>Tip:</strong> Tell me your role (student/parent/teacher) for personalized assistance!</small>
                         </div>
                         <div class="time" id="initial-time"></div>
                     </div>
@@ -76,7 +87,7 @@
                 <!-- Typing Indicator -->
                 <div class="typing-indicator" id="typingIndicator">
                     <div class="avatar">
-                        <i class="fas fa-robot"></i>
+                        <img src="assets/logo.png" alt="Bot" class="avatar-logo">
                     </div>
                     <div class="typing-dots">
                         <span></span>
@@ -89,8 +100,8 @@
             <!-- Suggestions -->
             <div class="suggestions">
                 <span class="suggestion-tag" onclick="sendMessage('Who is the founder of BGS?')">Who is the founder?</span>
-                <span class="suggestion-tag" onclick="sendMessage('Who is the chairman?')">Who is the chairman?</span>
-                <span class="suggestion-tag" onclick="sendMessage('Who is the principal?')">Who is the principal?</span>
+                <span class="suggestion-tag" onclick="sendMessage('Who is the Finance and Media Director?')">Finance Director?</span>
+                <span class="suggestion-tag" onclick="sendMessage('Who is the HOD of English?')">English HOD?</span>
                 <span class="suggestion-tag" onclick="sendMessage('How many years has the school been running?')">Years running?</span>
             </div>
             
@@ -113,7 +124,7 @@
         </div>
     </div>
     
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
     <script>
         // Set initial time
         document.getElementById('initial-time').textContent = getCurrentTime();
